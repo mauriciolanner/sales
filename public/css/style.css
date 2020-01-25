@@ -1,0 +1,92 @@
+body {
+    background-color: #f1f1f1;
+}
+
+.card {
+    padding: 8px;
+    margin: 9px 0px 0px 0px;
+    box-shadow: 0px 0px 7px rgba(181, 179, 179, 0.77);
+}
+
+.espacador {
+    padding: 10px;
+}
+
+.bg-aquaload {
+    background-color: #000090;
+    color: #fff;
+}
+
+.bg-aquaload a {
+    background-color: #04045a;
+}
+
+.bg-aquaload a:hover {
+    background-color: orange;
+}
+
+.drop-menu a {
+    background-color: #000090;
+    color: #fff !important;
+}
+
+.drop-menu a:hover {
+    background-color: #000090;
+    color: rgb(94, 122, 247) !important;
+}
+
+.dropado a {
+    background-color: #fff !important;
+    color: black !important;
+}
+
+
+/*material design*/
+
+.material-icons {
+    width: 24px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.material-icons.tiny {
+    font-size: 1rem;
+    width: 1rem;
+    overflow: hidden;
+}
+
+.material-icons.small {
+    font-size: 2rem;
+    width: 2rem;
+    overflow: hidden;
+}
+
+.material-icons.medium {
+    font-size: 4rem;
+    width: 4rem;
+    overflow: hidden;
+}
+
+.material-icons.large {
+    font-size: 6rem;
+    width: 6rem;
+    overflow: hidden;
+}
+
+.material-icons.extra-large {
+    font-size: 10rem;
+    width: 10rem;
+    overflow: hidden;
+}
+
+.padding-menu {
+    padding-right: 47px;
+}
+
+
+/*fim material design*/
+
+footer {
+    padding-top: 50px;
+    color: #b6b6b6;
+}

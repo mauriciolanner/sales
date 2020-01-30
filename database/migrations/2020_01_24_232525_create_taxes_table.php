@@ -22,16 +22,6 @@ class CreateTaxesTable extends Migration
             $table->timestamps();
             $table->softDeletes();
         });
-
-        Schema::create('products_taxes', function (Blueprint $table) {
-            $table->increments('id');
-            $table->unsignedBigInteger('products_id');
-            $table->foreign('products_id')->references('id')->on('products');
-            $table->unsignedBigInteger('tax_id');
-            $table->foreign('tax_id')->references('id')->on('taxes');
-            $table->timestamps();
-            $table->softDeletes();
-        });
     }
 
     /**
@@ -42,6 +32,5 @@ class CreateTaxesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('taxes');
-        Schema::dropIfExists('taxes_products');
     }
 }

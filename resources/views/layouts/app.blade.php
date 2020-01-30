@@ -30,11 +30,11 @@
                         class="material-icons padding-menu">
                         home
                     </i>Home</a>
-                <a href="/home" class="list-group-item list-group-item-action bg-aquaload"><i
+                <a href="/produtos" class="list-group-item list-group-item-action bg-aquaload"><i
                         class="material-icons padding-menu">
                         local_offer
                     </i>Produtos</a>
-                <a href="/home" class="list-group-item list-group-item-action bg-aquaload"><i
+                <a href="/taxas" class="list-group-item list-group-item-action bg-aquaload"><i
                         class="material-icons padding-menu">
                         show_chart
                     </i>Taxas</a>
@@ -65,7 +65,7 @@
                                 <a class="dropdown-item" href="#">Action</a>
                                 <a class="dropdown-item" href="#">Another action</a>
                                 <div class="dropdown-divider"></div>
-                                <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Logout
                                 </a>
@@ -79,6 +79,32 @@
                     </ul>
                 </div>
             </nav>
+            <div class="container">
+                <div class="row">
+                    <div class="espacador">
+                    </div>
+                    @if (session('success'))
+                    <div class="col-md-12">
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>{{ session('success') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    @endif
+                    @if (session('error'))
+                    <div class="col-md-12">
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            <strong>{{ session('error') }}</strong>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    @endif
+                </div>
+            </div>
             @yield('content')
             <footer class="text-center">Produzido por Mauricio Lanner</footer>
         </div>
@@ -97,6 +123,18 @@
             e.preventDefault();
             $("#wrapper").toggleClass("toggled");
         });
+    </script>
+
+    <script>
+        $('#modalTaxAdd').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
     </script>
 
 </body>
